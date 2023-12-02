@@ -1,0 +1,46 @@
+.book-appointments {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.book-appointments_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.book-appointments_body {
+  position: relative;
+  padding: 2rem;
+}
+.book-appointments_header div {
+  cursor: pointer;
+}
+
+.book-appointments_body h2 {
+  font-size: 2.5rem;
+}
+.book-appointments_body label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.selected-date {
+  font-size: 1.2rem;
+}
+.book-appointments_body input {
+  border-radius: 8px;
+}
+.book-appointments_body input:focus {
+  background-color: #e7f5ff;
+}
+.book-appointments_header div {
+  margin-right: 10rem;
+}
