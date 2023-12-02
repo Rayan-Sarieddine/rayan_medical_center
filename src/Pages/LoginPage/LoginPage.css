@@ -1,0 +1,68 @@
+.login-page {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(#fff, 0.8),
+      rgba(#fff, 0.8)
+    ),
+    url("./images/back.png");
+}
+.log-in_box {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #e7f5ff;
+  margin-top: 20rem;
+  padding: 4rem;
+}
+.input-group label {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+.input-group {
+  margin-bottom: 2.5rem;
+}
+.input-group input {
+  margin-top: 1rem;
+  display: block;
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+.input-group select {
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none; /* Remove default arrow */
+
+  cursor: pointer;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+  outline: none;
+  border: 1px solid #2980b9;
+}
+.log-warning {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: red;
+}
+.log-successful {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: green;
+}
