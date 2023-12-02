@@ -14,6 +14,9 @@
   align-items: center;
   padding: 2rem;
 }
+.medical-history_header div {
+  cursor: pointer;
+}
 .medical-history_body {
   position: relative;
   padding: 2rem;

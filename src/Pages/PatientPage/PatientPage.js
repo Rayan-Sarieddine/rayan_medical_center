@@ -21,7 +21,7 @@ function PatientPage() {
     appointments: [
       "January 1, 2022 at 7:30 PM",
       "May 15, 2023 at 12:30 PM",
-      "January 1, 2023 at 10:00 AM",
+      "January 1, 2024 at 10:00 AM",
     ],
   };
   return (
