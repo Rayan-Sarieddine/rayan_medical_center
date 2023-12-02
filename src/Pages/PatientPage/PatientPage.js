@@ -11,8 +11,10 @@ function PatientPage() {
     patient_name: "Ahmad Mo",
     patient_img: "https://i.pravatar.cc/200?u=118836",
     age: 25,
+    gender: "male",
     doctor: "Samir Senno",
     current_condition: "waiting surgury",
+    room: 201,
     appointments: [
       "January 1, 2022 at 7:30 PM",
       "May 15, 2023 at 12:30 PM",

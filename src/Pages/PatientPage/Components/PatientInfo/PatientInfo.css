@@ -1,0 +1,40 @@
+.patient-info {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.patient-info_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.patient-info_body {
+  position: relative;
+  padding: 2rem;
+}
+.patient-info_body img {
+  position: absolute;
+  top: 0;
+  right: 3rem;
+  width: 15rem;
+}
+.info-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+.info-item_title {
+  font-weight: 600;
+}
+.patient-info_header div {
+  cursor: pointer;
+}
