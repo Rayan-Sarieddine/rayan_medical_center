@@ -13,7 +13,10 @@ function PatientPage() {
     age: 25,
     gender: "male",
     doctor: "Samir Senno",
-    current_condition: "waiting surgury",
+    current_condition: [
+      "checked in with unjured knee",
+      "waiting surgury for knee injury",
+    ],
     room: 201,
     appointments: [
       "January 1, 2022 at 7:30 PM",

@@ -1,0 +1,24 @@
+.medical-history {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.medical-history_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.medical-history_body {
+  position: relative;
+  padding: 2rem;
+}
+.medical-condition {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
