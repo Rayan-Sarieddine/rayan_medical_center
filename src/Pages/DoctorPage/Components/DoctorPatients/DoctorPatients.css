@@ -1,0 +1,50 @@
+.doctor-patient-info {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.doctor-patient-info_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.doctor-patient-info_body {
+  position: relative;
+  padding: 2rem;
+}
+.doctor-patient-info_header div {
+  cursor: pointer;
+}
+.patient-row ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+}
+.doctor-patient-info_body table {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.doctor-patient-info_body table th,
+.doctor-patient-info_body table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.doctor-patient-info_body table th {
+  background-color: #c5f6fa;
+  font-weight: bold;
+}
+
+.doctor-patient-info_body table tbody tr:hover {
+  background-color: #c5f6fa;
+}

@@ -1,0 +1,48 @@
+.doctor-appointments {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.doctor-appointments_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.doctor-appointments_body {
+  position: relative;
+  padding: 2rem;
+}
+.doctor-appointments_header div {
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.Accept-btn1,
+.Reject-btn1 {
+  text-decoration: none;
+  color: #212529;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.Accept-btn1 {
+  background-color: green;
+  margin-right: 1rem;
+}
+.Accept-btn1:hover {
+  background-color: rgb(3, 97, 3);
+}
+.Reject-btn1:hover {
+  background-color: rgb(142, 4, 4);
+}
+.Reject-btn1 {
+  background-color: red;
+}
