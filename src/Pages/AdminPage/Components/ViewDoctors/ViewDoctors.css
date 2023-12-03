@@ -1,0 +1,44 @@
+.all-doctors {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.all-doctors_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.all-doctors_body {
+  position: relative;
+  padding: 2rem;
+}
+.all-doctors_header div {
+  cursor: pointer;
+}
+.all-doctors_body table {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.all-doctors_body table th,
+.all-doctors_body table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.all-doctors_body table th {
+  background-color: #c5f6fa;
+  font-weight: bold;
+}
+
+.all-doctors_body table tbody tr:hover {
+  background-color: #c5f6fa;
+}

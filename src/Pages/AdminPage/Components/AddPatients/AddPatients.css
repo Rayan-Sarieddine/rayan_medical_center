@@ -1,0 +1,87 @@
+.add-patient {
+  background-color: #e7f5ff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 5px;
+}
+.add-patient_header {
+  display: flex;
+  font-size: 2rem;
+  color: #0a198d;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.add-patient_body {
+  position: relative;
+  padding: 2rem;
+}
+.add-patient_header div {
+  margin-right: 4.5rem;
+  cursor: pointer;
+}
+
+.add-patient_box {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #e7f5ff;
+}
+.add-patient_box p {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.add-patient-input-group label {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+.add-patient-input-group {
+  margin-bottom: 2.5rem;
+}
+.add-patient-input-group input {
+  margin-top: 1rem;
+  display: block;
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-patient-submit {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-patient-submit:hover {
+  background-color: #2980b9;
+}
+.add-patient-input-group select {
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none; /* Remove default arrow */
+
+  cursor: pointer;
+}
+
+.add-patient-input-group select:focus,
+.add-patient-input-group input:focus {
+  outline: none;
+  border: 1px solid #2980b9;
+}
+.add-patient-warning {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: red;
+}
+.add-patient-successful {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: green;
+}

@@ -1,7 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ViewPatients.css";
-function ViewPatients() {
-  return <div>ViewPatients</div>;
+function ViewPatients({ allPatients }) {
+  const [showViewPatientsBody, setShowViewPatientsBody] = useState(false);
+  const toggleViewPatientsBody = () => {
+    setShowViewPatientsBody(!showViewPatientsBody);
+  };
+  return (
+    <div className="all-patients">
+      <div className="all-patients_header">
+        <h3>All Patients</h3>
+        <div onClick={toggleViewPatientsBody}>&#9660;</div>
+      </div>
+      {showViewPatientsBody && ( // Renders the body if showBody is true
+        <div className="all-patients_body">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image link</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Doctor</th>
+                <th>Condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allPatients.map((pt) => {
+                return (
+                  <tr key={pt.id}>
+                    <td>{pt.id}</td>
+                    <td>{pt.patient_name}</td>
+                    <td>{pt.email}</td>
+                    <td>{pt.patient_img}</td>
+
+                    <td>{pt.age}</td>
+                    <td>{pt.gender}</td>
+                    <td>{pt.doctor}</td>
+                    <td>
+                      {pt.current_condition[pt.current_condition.length - 1]}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default ViewPatients;
