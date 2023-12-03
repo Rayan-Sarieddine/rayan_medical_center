@@ -11,14 +11,13 @@ function ViewPatients({ allPatients }) {
         <h3>All Patients</h3>
         <div onClick={toggleViewPatientsBody}>&#9660;</div>
       </div>
-      {showViewPatientsBody && ( // Renders the body if showBody is true
+      {showViewPatientsBody && (
         <div className="all-patients_body">
           <table>
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
                 <th>Image link</th>
                 <th>Age</th>
                 <th>Gender</th>
@@ -29,18 +28,15 @@ function ViewPatients({ allPatients }) {
             <tbody>
               {allPatients.map((pt) => {
                 return (
-                  <tr key={pt.id}>
-                    <td>{pt.id}</td>
+                  <tr key={pt.patient_id}>
+                    <td>{pt.patient_id}</td>
                     <td>{pt.patient_name}</td>
-                    <td>{pt.email}</td>
                     <td>{pt.patient_img}</td>
 
                     <td>{pt.age}</td>
                     <td>{pt.gender}</td>
                     <td>{pt.doctor}</td>
-                    <td>
-                      {pt.current_condition[pt.current_condition.length - 1]}
-                    </td>
+                    <td>{pt.current_condition}</td>
                   </tr>
                 );
               })}

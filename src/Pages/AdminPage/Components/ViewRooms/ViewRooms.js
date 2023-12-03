@@ -11,7 +11,7 @@ function ViewRooms({ allRooms }) {
         <h3>All Rooms</h3>
         <div onClick={toggleViewRoomsBody}>&#9660;</div>
       </div>
-      {showViewRoomsBody && ( // Renders the body if showBody is true
+      {showViewRoomsBody && (
         <div className="all-rooms_body">
           <table>
             <thead>
@@ -20,25 +20,23 @@ function ViewRooms({ allRooms }) {
                 <th>Number</th>
                 <th>Floor</th>
                 <th>Capacity</th>
-                <th>Patients</th>
+                {/* <th>Patients</th> */}
               </tr>
             </thead>
             <tbody>
               {allRooms.map((rm) => {
                 return (
                   <tr
-                    key={rm.id}
-                    className={
-                      rm.room_capacity > rm.room_patients.length
-                        ? "green"
-                        : "red"
-                    }
+                    key={rm.room_id}
+                    // className={
+                    //   rm.capacity > rm.room_patients.length ? "green" : "red"
+                    // }
                   >
-                    <td>{rm.id}</td>
+                    <td>{rm.room_id}</td>
                     <td>{rm.room_number}</td>
-                    <td>{rm.room_floor}</td>
-                    <td>{rm.room_capacity}</td>
-                    <td>{rm.room_patients.join(", ")}</td>
+                    <td>{rm.floor}</td>
+                    <td>{rm.capacity}</td>
+                    {/* <td>{rm.room_patients.join(", ")}</td> */}
                   </tr>
                 );
               })}
