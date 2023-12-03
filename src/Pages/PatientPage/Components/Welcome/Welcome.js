@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Welcome.css";
 function Welcome({ patient }) {
   return (
     <div className="welcome">
       <div className="welcome-intro">
-        <img src={require("../images/logo-white.png")} alt="logo" />
+        <Link to="/">
+          <img src={require("../images/logo-white.png")} alt="logo" />
+        </Link>
         <h2 className="welcome-name">
           Welcome,{" "}
           {patient.patient_name.split(" ")[0].charAt(0).toUpperCase() +

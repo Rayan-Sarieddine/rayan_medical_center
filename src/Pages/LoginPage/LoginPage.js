@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginPage.css";
+import { Link } from "react-router-dom";
 function LoginPage() {
+  const [selectedRole, setSelectedRole] = useState("");
+
+  const handleuserTypeChange = (event) => {
+    setSelectedRole(event.target.value);
+  };
   return (
     <div className="login-page">
       <div className="log-in_box">
         <form>
           <div class="input-group">
             <label for="role">Logging as:</label>
-            <select id="role" name="role" required>
+            <select
+              id="role"
+              name="role"
+              onChange={handleuserTypeChange}
+              required
+            >
               <option value="">Select Role</option>
               <option value="patient">Patient</option>
               <option value="doctor">Doctor</option>
@@ -34,7 +45,9 @@ function LoginPage() {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <Link to={`/${selectedRole}`}>
+            <button type="submit">Login</button>
+          </Link>
           <p className="log-warning"></p>
           <p className="log-successful"></p>
         </form>

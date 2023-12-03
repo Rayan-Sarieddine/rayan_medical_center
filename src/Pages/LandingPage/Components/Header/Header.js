@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 function Header() {
   return (
@@ -15,7 +16,9 @@ function Header() {
           <li>
             <a href="jsx-a11y/anchor-is-valid">Patients</a>
           </li>
-          <button>Log-In</button>
+          <Link to="/login">
+            <button>Log-In</button>
+          </Link>
         </ul>
       </nav>
     </div>

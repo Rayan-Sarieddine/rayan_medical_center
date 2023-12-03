@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./WelcomeDr.css";
 function WelcomeDr({ doctor }) {
   return (
@@ -12,7 +13,9 @@ function WelcomeDr({ doctor }) {
           .
         </h2>
       </div>
-      <button className="welcome-dr-logout">Log-Out</button>
+      <Link to="/">
+        <button className="welcome-dr-logout">Log-Out</button>
+      </Link>
     </div>
   );
 }
