@@ -17,78 +17,59 @@ function AdminPage() {
   const [allRooms, setRooms] = useState([]);
 
   useEffect(() => {
-    // Fetch doctors data when the component mounts
     fetchDoctorsData();
     fetchPatientsData();
     fetchRoomssData();
   }, []);
-  //fetch dr data
+
   const fetchDoctorsData = async () => {
-    // Make a request to your PHP endpoint
     try {
       const response1 = await axios.get(
         "https://localhost/rayan_care/allDoctors.php"
       );
 
-      console.log(response1.data.patients_data);
-      // Handle the response containing doctors' data
       if (response1.data.doctors_data) {
         setDoctors(response1.data.doctors_data);
       } else {
-        // Handle case where no doctors are found
         console.log("No doctors found");
       }
     } catch (error) {
-      // Handle errors
       console.error("Error fetching doctors:", error);
     }
   };
-  //fetch patient data
+
   const fetchPatientsData = async () => {
-    // Make a request to your PHP endpoint
     try {
       const response2 = await axios.get(
         "https://localhost/rayan_care/allPatients.php"
       );
 
-      console.log(response2.data.patients_data);
-      // Handle the response containing patients' data
       if (response2.data.patients_data) {
         setPatients(response2.data.patients_data);
       } else {
-        // Handle case where no patients are found
         console.log("No patients found");
       }
     } catch (error) {
-      // Handle errors
       console.error("Error fetching patients:", error);
     }
   };
-  //fetch room data
+
   const fetchRoomssData = async () => {
-    // Make a request to PHP endpoint
     try {
       const response3 = await axios.get(
         "https://localhost/rayan_care/allRooms.php"
       );
 
-      console.log(response3.data.rooms_data);
-      // Handle the response containing rooms' data
       if (response3.data.rooms_data) {
         setRooms(response3.data.rooms_data);
       } else {
-        // Handle case where no rooms are found
         console.log("No rooms found");
       }
     } catch (error) {
-      // Handle errors
       console.error("Error fetching rooms:", error);
     }
   };
-  // useEffect(() => {
-  //   console.log(allDoctors);
-  // }, [allDoctors]);
-  // //x
+
   // const allPatients = [
   //   {
   //     id: 0,

@@ -66,7 +66,7 @@ function AddDoctors() {
     setTimeout(() => {
       setDoctorErrorMsg("");
       setDoctorMsg("");
-    }, 1);
+    }, 3000);
   }
   const toggleAddDoctorBody = () => {
     setShowAddDoctorBody(!showAddDoctorBody);
@@ -83,7 +83,7 @@ function AddDoctors() {
             <p>Add Doctors:</p>
             <form onSubmit={handleSubmit}>
               <div className="add-doctor-input-group">
-                <label for="doctor_name">Doctor name: </label>
+                <label htmlFor="doctor_name">Doctor name: </label>
                 <input
                   type="text"
                   id="doctor_name"
@@ -95,7 +95,7 @@ function AddDoctors() {
                 />
               </div>
               <div className="add-doctor-input-group">
-                <label for="doctor_speciality">Doctor Speciality: </label>
+                <label htmlFor="doctor_speciality">Doctor Speciality: </label>
                 <input
                   type="text"
                   id="doctor_speciality"
@@ -107,7 +107,7 @@ function AddDoctors() {
                 />
               </div>
               <div className="add-doctor-input-group">
-                <label for="doctor_email">Doctor Email: </label>
+                <label htmlFor="doctor_email">Doctor Email: </label>
                 <input
                   type="email"
                   id="doctor_email"
@@ -119,7 +119,7 @@ function AddDoctors() {
                 />
               </div>
               <div className="add-doctor-input-group">
-                <label for="doctor_password">Doctor Password: </label>
+                <label htmlFor="doctor_password">Doctor Password: </label>
                 <input
                   type="password"
                   id="doctor_password"
@@ -131,9 +131,11 @@ function AddDoctors() {
                 />
               </div>
 
-              <button type="add-doctor-submit">Add</button>
+              <button type="submit" className="add-doctor-submit">
+                Add
+              </button>
               <p className="add-doctor-warning">{doctorMsg}</p>
-              <p className="add-doctor-successful"></p>
+              <p className="add-doctor-successful">{doctorErrorMsg}</p>
             </form>
           </div>
         </div>
