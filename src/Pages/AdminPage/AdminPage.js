@@ -45,7 +45,15 @@ function AdminPage() {
       ],
     },
   ];
-
+  const allRooms = [
+    {
+      id: 0,
+      room_number: 201,
+      room_floor: 3,
+      room_capacity: 2,
+      room_patients: ["Ahmad Ball", "Sami Labeeb"],
+    },
+  ];
   return (
     <div className="admin-page">
       <WelcomeAdmin />
@@ -55,7 +63,7 @@ function AdminPage() {
       <ViewPatients allPatients={allPatients} />
       <AddPatients />
       <UpdatePatient />
-      <ViewRooms />
+      <ViewRooms allRooms={allRooms} />
       <AssignRoom />
     </div>
   );
