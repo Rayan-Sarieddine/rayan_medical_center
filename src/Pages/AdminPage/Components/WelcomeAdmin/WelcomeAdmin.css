@@ -1,0 +1,37 @@
+.welcome-admin {
+  background-color: #e7f5ff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.welcome-admin-intro {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.welcome-admin h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.welcome-admin img {
+  width: 10rem;
+  border-radius: 50%;
+}
+.welcome-admin-logout {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: #74c0fc;
+  text-decoration: none;
+  color: #212529;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.welcome-admin-logout:hover {
+  background-color: #4dabf7;
+}
