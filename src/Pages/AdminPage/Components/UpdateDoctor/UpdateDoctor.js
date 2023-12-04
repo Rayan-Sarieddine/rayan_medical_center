@@ -101,6 +101,8 @@ function UpdateDoctor() {
                   <option value="">Select...</option>
                   <option value="doctor_name">Name</option>
                   <option value="speciality">speciality</option>
+                  <option value="user_email">email</option>
+                  <option value="user_password">password</option>
                 </select>
               </div>
               <div className="update-doctor-input-group">

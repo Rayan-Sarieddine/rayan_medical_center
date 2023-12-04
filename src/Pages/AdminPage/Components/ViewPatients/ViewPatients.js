@@ -23,6 +23,8 @@ function ViewPatients({ allPatients }) {
                 <th>Gender</th>
                 <th>Doctor</th>
                 <th>Condition</th>
+                <th>Email</th>
+                <th>Password</th>
               </tr>
             </thead>
             <tbody>
@@ -37,6 +39,8 @@ function ViewPatients({ allPatients }) {
                     <td>{pt.gender}</td>
                     <td>{pt.doctor}</td>
                     <td>{pt.current_condition}</td>
+                    <td>{pt.user_email}</td>
+                    <td>{pt.user_password}</td>
                   </tr>
                 );
               })}

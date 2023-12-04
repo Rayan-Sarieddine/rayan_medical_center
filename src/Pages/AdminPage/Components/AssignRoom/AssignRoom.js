@@ -45,6 +45,7 @@ function AssignRoom() {
           setUpdatePatientRMsg("Assigned");
           reset();
         } else {
+          console.log(response);
           setUpdatePatientRError(response.data.message);
           reset();
         }

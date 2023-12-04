@@ -10,6 +10,7 @@ function AddPatients() {
   const [patientage, setpatientage] = useState("");
   const [patientgender, setpatientgender] = useState("");
   const [patientDoctorId, setpatientDoctorId] = useState("");
+  const [patientRoomId, setpatientRoomId] = useState("");
   const [patientCurrentCondition, setpatientCurrentCondition] = useState("");
   const [patientMsg, setpatientMsg] = useState("");
   const [patientErrorMsg, setpatientErrorMsg] = useState("");
@@ -36,6 +37,9 @@ function AddPatients() {
       case "patient_doctor":
         setpatientDoctorId(e.target.value);
         break;
+      case "patient_room":
+        setpatientRoomId(e.target.value);
+        break;
       case "patient_current":
         setpatientCurrentCondition(e.target.value);
         break;
@@ -53,6 +57,7 @@ function AddPatients() {
       patient_gender: patientgender,
       patient_age: patientage,
       patient_doctor: patientDoctorId,
+      patient_room: patientRoomId,
       patient_current: patientCurrentCondition,
       user_role: "patient",
     };
@@ -69,9 +74,11 @@ function AddPatients() {
       .then((response) => {
         if (response.data.message === "User added") {
           setpatientMsg("Added");
+
           reset();
         } else {
           setpatientErrorMsg(response.data.message);
+
           reset();
         }
       })
@@ -87,6 +94,7 @@ function AddPatients() {
     setpatientgender("");
     setpatientage("");
     setpatientDoctorId("");
+    setpatientRoomId("");
     setpatientCurrentCondition("");
     setTimeout(() => {
       setpatientErrorMsg("");
@@ -157,14 +165,26 @@ function AddPatients() {
                 />
               </div>
               <div className="add-patient-input-group">
-                <label htmlFor="patient_doctor">Doctor: </label>
+                <label htmlFor="patient_doctor">Doctor ID: </label>
                 <input
                   type="text"
                   id="patient_doctor"
                   value={patientDoctorId}
                   onChange={(e) => handleInputChange(e, "patient_doctor")}
                   name="patient_doctor"
-                  placeholder="Enter Patient Doctor:"
+                  placeholder="Enter Patient Doctor ID:"
+                  required
+                />
+              </div>
+              <div className="add-patient-input-group">
+                <label htmlFor="patient_room">Room ID: </label>
+                <input
+                  type="text"
+                  id="patient_room"
+                  value={patientRoomId}
+                  onChange={(e) => handleInputChange(e, "patient_room")}
+                  name="patient_room"
+                  placeholder="Enter Patient Room ID:"
                   required
                 />
               </div>

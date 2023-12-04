@@ -106,6 +106,8 @@ function UpdatePatient() {
                   <option value="gender">Gender</option>
                   <option value="doctor">Doctor</option>
                   <option value="current_condition">Condition</option>
+                  <option value="user_email">Email</option>
+                  <option value="user_password">Password</option>
                 </select>
               </div>
               <div className="update-patient-input-group">

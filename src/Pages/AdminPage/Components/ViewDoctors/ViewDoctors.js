@@ -20,6 +20,8 @@ function ViewDoctors({ allDoctors }) {
                 <th>ID</th>
                 <th>Name</th>
                 <th>speciality</th>
+                <th>email</th>
+                <th>password</th>
                 {/* <th>Number of Patients</th> */}
               </tr>
             </thead>
@@ -30,6 +32,8 @@ function ViewDoctors({ allDoctors }) {
                     <td>{dr.doctor_id}</td>
                     <td>{dr.doctor_name}</td>
                     <td>{dr.speciality}</td>
+                    <td>{dr.user_email}</td>
+                    <td>{dr.user_password}</td>
                     {/* <td>{dr.patients.length}</td> */}
                   </tr>
                 );
