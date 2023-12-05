@@ -9,6 +9,7 @@
 
 Using Vanilla PHP for the backend and React for the frontend. Including JWT (JSON Web Tokens) authentication and authorization using Axios for API interactions.
 
+Credentials Already created in db:
 admin:
 rayan@gmail.com
 password
@@ -38,4 +39,8 @@ You may also see any lint errors in the console.
 <!-- Prototyping -->
 <img src="./readme/title3.svg"/>
 
-| ![Landing](./readme/demo.jpg)
+| ![Landing](./readme/demo1.jpg)
+| ![Landing](./readme/demo2.jpg)
+| ![Landing](./readme/demo3.jpg)
+| ![Landing](./readme/demo4.jpg)
+| ![Landing](./readme/demo6.jpg)
