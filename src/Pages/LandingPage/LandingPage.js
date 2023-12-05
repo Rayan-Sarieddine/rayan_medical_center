@@ -12,9 +12,9 @@ function LandingPage() {
     <div className="landing-page">
       <Header />
       <Hero />
-      <HospitalInfo />
       <PatientInfo />
       <DoctorInfo />
+      <HospitalInfo />
       <Footer />
     </div>
   );

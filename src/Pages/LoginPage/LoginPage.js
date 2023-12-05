@@ -117,7 +117,7 @@ function LoginPage() {
             />
           </div>
 
-          <input type="submit" />
+          <button type="submit">LOG-IN</button>
 
           <p className="log-warning">{error}</p>
           <p className="log-successful">{msg}</p>

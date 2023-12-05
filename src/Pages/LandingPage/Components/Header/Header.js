@@ -7,15 +7,9 @@ function Header() {
       <img src={require("../images/logo-white.png")} alt="logo" />
       <nav>
         <ul>
-          <li>
-            <a href="jsx-a11y/anchor-is-valid">About Us</a>
-          </li>
-          <li>
-            <a href="jsx-a11y/anchor-is-valid">doctors</a>
-          </li>
-          <li>
-            <a href="jsx-a11y/anchor-is-valid">Patients</a>
-          </li>
+          <li>About Us</li>
+          <li>doctors</li>
+          <li>Patients</li>
           <Link to="/login">
             <button>Log-In</button>
           </Link>

@@ -1,0 +1,37 @@
+.hospital-info {
+  margin-top: 15rem;
+  margin-bottom: 10rem;
+}
+.hospital-info h2 {
+  font-size: 3rem;
+  color: #0a198d;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+.hospital-info p {
+  font-size: 1.5rem;
+  color: #232323;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+.hospital-info ul {
+  list-style: none;
+  display: flex;
+  margin-top: 4rem;
+  justify-content: space-around;
+}
+.hospital-info ul li {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+.hospital-info ul li:hover {
+  background-color: #64aad6;
+}

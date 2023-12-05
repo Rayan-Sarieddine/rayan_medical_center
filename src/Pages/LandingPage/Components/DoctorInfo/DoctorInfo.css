@@ -1,0 +1,50 @@
+.doctor-info {
+  margin-top: 5rem;
+  width: 100%;
+}
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+
+  color: #0a198d;
+}
+.title-explain {
+  font-size: 5.2rem;
+}
+.container-title {
+  text-align: center;
+}
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 7rem;
+}
+.step-text {
+  width: 40%;
+}
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+.step-title {
+  font-size: 1.8rem;
+  color: #0a198d;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.step-description {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+.step-img {
+  width: 30%;
+}
+.step-img img {
+  width: 100%;
+  border-radius: 15px;
+}

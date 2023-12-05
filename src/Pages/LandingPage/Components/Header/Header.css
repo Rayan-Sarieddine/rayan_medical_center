@@ -4,11 +4,22 @@
   justify-content: space-between;
   align-items: center;
   background-color: #a5d8ff;
+  clip-path: polygon(11% 0, 100% 0%, 100% 100%, 9% 100%, 0% 50%);
+  animation: rightslide 1s ease-in-out;
   padding: 2rem;
+}
+@keyframes rightslide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .landing-header img {
   height: 10rem;
   cursor: pointer;
+  margin-left: 10rem;
 }
 .landing-header ul {
   display: flex;
@@ -19,7 +30,7 @@
   margin-left: 4rem;
   margin-top: 1rem;
 }
-.landing-header ul li a {
+.landing-header ul li {
   text-decoration: none;
   color: #212529;
   padding: 1rem 2rem;
@@ -27,11 +38,12 @@
   transition: 0.5s;
   cursor: pointer;
 }
-.landing-header ul li a:hover {
+.landing-header ul li:hover {
   background-color: #74c0fc;
 }
 .landing-header ul button {
   margin-left: 2rem;
+  margin-top: 1rem;
   margin-right: 2rem;
   background-color: #74c0fc;
   text-decoration: none;
