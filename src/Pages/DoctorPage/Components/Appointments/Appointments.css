@@ -46,3 +46,24 @@
 .Reject-btn1 {
   background-color: red;
 }
+.tb {
+  background-color: white;
+}
+.table-btn-accept button {
+  background-color: rgb(67, 67, 160);
+}
+.table-btn-reject button {
+  background-color: rgb(148, 60, 60);
+}
+.table-btn-finish button {
+  background-color: rgb(60, 135, 60);
+}
+.table-btn-accept button:hover {
+  background-color: rgb(40, 40, 114);
+}
+.table-btn-reject button:hover {
+  background-color: rgb(101, 32, 32);
+}
+.table-btn-finish button:hover {
+  background-color: rgb(30, 108, 30);
+}

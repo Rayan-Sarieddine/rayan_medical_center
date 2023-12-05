@@ -11,8 +11,8 @@ function Medicine({ doctor }) {
         <h3>
           Dr.
           {" " +
-            doctor.doctor_name.split(" ")[0].charAt(0).toUpperCase() +
-            doctor.doctor_name.split(" ")[0].slice(1).toLowerCase() +
+            doctor.split(" ")[0].charAt(0).toUpperCase() +
+            doctor.split(" ")[0].slice(1).toLowerCase() +
             " "}
           Medicine prescription
         </h3>
