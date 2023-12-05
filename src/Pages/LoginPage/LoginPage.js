@@ -65,7 +65,9 @@ function LoginPage() {
           }
         )
         .then((response) => {
+          console.log(response);
           if (response.data.message === "User found") {
+            // localStorage.setItem("accessToken", response.data.token);
             localStorage.setItem("user_id", response.data.user_id);
             window.location.href = `/${selectedRole}`;
           }
