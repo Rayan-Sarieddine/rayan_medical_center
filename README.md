@@ -9,17 +9,17 @@
 
 Using Vanilla PHP for the backend and React for the frontend. Including JWT (JSON Web Tokens) authentication and authorization using Axios for API interactions.
 
-Credentials Already created in db:
-admin:
-rayan@gmail.com
+Credentials Already created in db:  
+admin:  
+rayan@gmail.com  
 password
 
-doctor:
-salim@gmail.com
+doctor:  
+salim@gmail.com  
 salimpassword
 
-patient:
-kamal@gmail.com
+patient:  
+kamal@gmail.com  
 kamalpassword
 
 Admin: Manage doctors and patients (CRUD operations), approve or deny any new patients going through the emergency room. Assign patients into rooms that are free in the hospital.  
