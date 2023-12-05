@@ -5,6 +5,7 @@ import WelcomeDr from "./Components/WelcomeDr/WelcomeDr";
 import DoctorPatients from "./Components/DoctorPatients/DoctorPatients";
 import Medicine from "./Components/Medicine/Medicine";
 import Appointments from "./Components/Appointments/Appointments";
+import PatientMedication from "./Components/PatientMedication/PatientMedication";
 
 function DoctorPage() {
   // const doctor = {
@@ -45,6 +46,7 @@ function DoctorPage() {
         <>
           <WelcomeDr doctor={doctor.doctor_name} />
           <DoctorPatients doctor={doctor.doctor_name} />
+          <PatientMedication doctor={doctor.doctor_name} />
           <Medicine doctor={doctor.doctor_name} />
           <Appointments doctor={doctor.doctor_name} />
         </>
