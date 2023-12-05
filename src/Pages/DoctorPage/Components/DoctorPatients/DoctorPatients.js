@@ -62,7 +62,7 @@ function DoctorPatients({ doctor }) {
         </h3>
         <div onClick={toggleDoctorPatientsInfoBody}>&#9660;</div>
       </div>
-      {showDoctorPatientsInfoBody && ( // Renders the body if showBody is true
+      {showDoctorPatientsInfoBody && (
         <div className="doctor-patient-info_body">
           <table>
             <thead>
@@ -76,16 +76,20 @@ function DoctorPatients({ doctor }) {
               </tr>
             </thead>
             <tbody>
-              {patients.map((patient) => (
-                <tr key={patient.patient_id}>
-                  <td>{patient.patient_id}</td>
-                  <td>{patient.patient_name}</td>
-                  <td>{patient.age}</td>
-                  <td>{patient.gender}</td>
-                  <td>patient.current_condition</td>
-                  <td>{patient.room}</td>
-                </tr>
-              ))}
+              {patients && (
+                <>
+                  {patients.map((patient) => (
+                    <tr key={patient.patient_id}>
+                      <td>{patient.patient_id}</td>
+                      <td>{patient.patient_name}</td>
+                      <td>{patient.age}</td>
+                      <td>{patient.gender}</td>
+                      <td>patient.current_condition</td>
+                      <td>{patient.room}</td>
+                    </tr>
+                  ))}
+                </>
+              )}
             </tbody>
           </table>
         </div>

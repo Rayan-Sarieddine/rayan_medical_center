@@ -120,50 +120,54 @@ function Appointments({ doctor }) {
               </tr>
             </thead>
             <tbody>
-              {appointmentsData.map((appoint, i) => {
-                return (
-                  <tr key={i} className={appoint.status_of_appointment}>
-                    <td>{appoint.date_of_appointment}</td>
-                    <td>{appoint.status_of_appointment}</td>
-                    <td className="tb table-btn-accept">
-                      <button
-                        onClick={() => {
-                          acceptAppointment(
-                            appoint.date_of_appointment,
-                            appoint.patient_id
-                          );
-                        }}
-                      >
-                        Accept
-                      </button>
-                    </td>
-                    <td className="tb table-btn-reject">
-                      <button
-                        onClick={() => {
-                          rejectAppointment(
-                            appoint.date_of_appointment,
-                            appoint.patient_id
-                          );
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </td>
-                    <td className="tb table-btn-finish">
-                      <button
-                        onClick={() => {
-                          finishAppointment(
-                            appoint.date_of_appointment,
-                            appoint.patient_id
-                          );
-                        }}
-                      >
-                        Finish
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {appointmentsData && (
+                <>
+                  {appointmentsData.map((appoint, i) => {
+                    return (
+                      <tr key={i} className={appoint.status_of_appointment}>
+                        <td>{appoint.date_of_appointment}</td>
+                        <td>{appoint.status_of_appointment}</td>
+                        <td className="tb table-btn-accept">
+                          <button
+                            onClick={() => {
+                              acceptAppointment(
+                                appoint.date_of_appointment,
+                                appoint.patient_id
+                              );
+                            }}
+                          >
+                            Accept
+                          </button>
+                        </td>
+                        <td className="tb table-btn-reject">
+                          <button
+                            onClick={() => {
+                              rejectAppointment(
+                                appoint.date_of_appointment,
+                                appoint.patient_id
+                              );
+                            }}
+                          >
+                            Reject
+                          </button>
+                        </td>
+                        <td className="tb table-btn-finish">
+                          <button
+                            onClick={() => {
+                              finishAppointment(
+                                appoint.date_of_appointment,
+                                appoint.patient_id
+                              );
+                            }}
+                          >
+                            Finish
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </>
+              )}
             </tbody>
           </table>
         </div>

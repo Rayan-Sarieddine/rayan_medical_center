@@ -16,7 +16,8 @@ function BookAppointments({ patient }) {
     setSelectedDate(newd.toLocaleString());
   };
 
-  function submitappointment() {
+  function submitappointment(e) {
+    e.preventDefault();
     let data = {
       user_id: localStorage.getItem("user_id"),
       appointment_date: selectedDate,
@@ -53,28 +54,27 @@ function BookAppointments({ patient }) {
       {showBookAppointmentsBody && (
         <div className="book-appointments_body">
           <h2>Book Appointments</h2>
-          <label for="book-appointmentDateTime">
-            Select Appointment's Date and Time:
-          </label>
-          <input
-            type="datetime-local"
-            id="book-appointmentDateTime"
-            name="book-appointmentDateTime"
-            onChange={handleDateSelection}
-          />
+          <form onSubmit={submitappointment}>
+            <label htmlFor="book-appointmentDateTime">
+              Select Appointment's Date and Time:
+            </label>
 
-          <div className="selected-date">
-            Selected Date: {selectedDate ? selectedDate : "No date selected"}
-          </div>
-          <p className="appointment-msg">{msg}</p>
-          <button
-            className="appointment-btn"
-            onClick={() => {
-              submitappointment();
-            }}
-          >
-            Book
-          </button>
+            <input
+              type="datetime-local"
+              id="book-appointmentDateTime"
+              name="book-appointmentDateTime"
+              onChange={handleDateSelection}
+              required
+            />
+
+            <div className="selected-date">
+              Selected Date: {selectedDate ? selectedDate : "No date selected"}
+            </div>
+            <p className="appointment-msg">{msg}</p>
+            <button className="appointment-btn" type="submit">
+              Book
+            </button>
+          </form>
         </div>
       )}
     </div>
