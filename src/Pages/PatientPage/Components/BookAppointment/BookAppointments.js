@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./BookAppointment.css";
+import axios from "axios";
 function BookAppointments({ patient }) {
   const [showBookAppointmentsBody, setShowBookAppointmentsBody] =
     useState(false);
@@ -7,12 +8,38 @@ function BookAppointments({ patient }) {
     setShowBookAppointmentsBody(!showBookAppointmentsBody);
   };
   const [selectedDate, setSelectedDate] = useState(null);
+  const [msg, setmsg] = useState("");
 
   const handleDateSelection = (event) => {
     const d = event.target.value;
     const newd = new Date(d);
     setSelectedDate(newd.toLocaleString());
   };
+
+  function submitappointment() {
+    let data = {
+      user_id: localStorage.getItem("user_id"),
+      appointment_date: selectedDate,
+    };
+    console.log(data);
+    try {
+      axios
+        .post("https://localhost/rayan_care/bookAppointment.php", data, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          setmsg(response.data.message);
+          setTimeout(() => {
+            setmsg("");
+          }, 1000);
+        });
+    } catch (error) {
+      console.error("Error getting info:", error);
+    }
+  }
   return (
     <div className="book-appointments">
       <div className="book-appointments_header">
@@ -39,6 +66,15 @@ function BookAppointments({ patient }) {
           <div className="selected-date">
             Selected Date: {selectedDate ? selectedDate : "No date selected"}
           </div>
+          <p className="appointment-msg">{msg}</p>
+          <button
+            className="appointment-btn"
+            onClick={() => {
+              submitappointment();
+            }}
+          >
+            Book
+          </button>
         </div>
       )}
     </div>

@@ -48,11 +48,10 @@ function LoginPage() {
       email: email,
       password: password,
     };
-    console.log(data);
+
     loginSubmit(data);
   };
   function loginSubmit(data) {
-    console.log("here");
     if (email !== "" && password !== "" && selectedRole !== "") {
       axios
         .post("https://localhost/rayan_care/sign-in.php", data, {
@@ -63,6 +62,7 @@ function LoginPage() {
         })
         .then((response) => {
           if (response.data.message === "User found") {
+            localStorage.setItem("user_id", response.data.user_id);
             window.location.href = `/${selectedRole}`;
           }
         })

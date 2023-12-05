@@ -40,9 +40,7 @@ function PatientInfo({ patient }) {
           </div>
           <div className="info-item">
             <p className="info-item_title">Current Condition: </p>
-            <p className="info-item_value">
-              {patient.current_condition[patient.current_condition.length - 1]}
-            </p>
+            <p className="info-item_value">{patient.current_condition}</p>
           </div>
         </div>
       )}

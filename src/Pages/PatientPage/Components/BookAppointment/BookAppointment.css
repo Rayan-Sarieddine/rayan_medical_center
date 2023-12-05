@@ -44,3 +44,12 @@
 .book-appointments_header div {
   margin-right: 10rem;
 }
+.appointment-btn {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.appointment-msg {
+  font-size: 1.5rem;
+  color: green;
+  margin-top: 1rem;
+}
