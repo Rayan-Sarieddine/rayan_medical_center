@@ -26,21 +26,29 @@ if (!empty($data)) {
   $user_id = $data['patient_id'];
   $date = $data['date'];
    
-    $query = "UPDATE appointmants SET status_of_appointment = 'accepted' WHERE patient_id='$user_id' AND date_of_appointment='$date' ;";
-    $result = $conn->query($query);
-    if ($result) {
-      
+  $query = "UPDATE appointmants SET status_of_appointment = 'accepted' WHERE patient_id = ? AND date_of_appointment = ?";
+$stmt = $conn->prepare($query);
+
+if ($stmt) {
+   
+    $stmt->bind_param("is", $user_id, $date);
+    
+    
+    $stmt->execute();
+    
+    
+    if ($stmt->affected_rows > 0) {
         echo json_encode(array('success' => true, 'message' => 'Appointment accepted'));
     } else {
-        
         echo json_encode(array('success' => false, 'message' => 'Failed to accept appointment'));
     }
-}
-else {
     
+ 
+    $stmt->close();
+} else {
     echo json_encode(array('success' => false, 'message' => 'No data received'));
 }
 }
+}
 
-$conn->close();
 ?>
