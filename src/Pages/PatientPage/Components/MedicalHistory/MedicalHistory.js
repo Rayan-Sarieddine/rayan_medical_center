@@ -5,6 +5,7 @@ function MedicalHistory({ patient }) {
   const [showMedicalHistoryBody, setShowMedicalHistoryBody] = useState(false);
   const data = { user_id: localStorage.getItem("user_id") };
   const [medicalHistory, setMedicalHistory] = useState(null);
+  const [medicineHistory, setMedicineHistory] = useState(null);
   const toggleMedicalHistoryBody = () => {
     setShowMedicalHistoryBody(!showMedicalHistoryBody);
   };
@@ -18,7 +19,8 @@ function MedicalHistory({ patient }) {
           },
         })
         .then((response) => {
-          setMedicalHistory(response.data.medical_data);
+          setMedicalHistory(response.data.condition_data);
+          setMedicineHistory(response.data.medication_data);
         });
     } catch (error) {
       console.error("Error getting info:", error);
@@ -37,21 +39,37 @@ function MedicalHistory({ patient }) {
         </h3>
         <div onClick={toggleMedicalHistoryBody}>&#9660;</div>
       </div>
-      {medicalHistory && (
-        <>
-          {showMedicalHistoryBody && (
-            <div className="medical-history_body">
-              {medicalHistory.map((con, ind) => {
-                return (
-                  <p className="medical-condition">
-                    {ind + 1}- {con.patient_condition} on {con.date_of_add}
-                  </p>
-                );
-              })}
-            </div>
-          )}
-        </>
-      )}
+
+      <>
+        {showMedicalHistoryBody && (
+          <div className="medical-history_body">
+            <p className="medical-header">Condition History:</p>
+            {medicalHistory?.map((con, ind) => {
+              return (
+                <p className="medical-condition">
+                  {ind + 1}- {con.patient_condition} on {con.date_of_add}
+                </p>
+              );
+            })}
+            <p className="medical-header">Medicine Prescription History:</p>;
+            {medicineHistory?.map((med, ind) => {
+              return (
+                <p className="medical-condition">
+                  {ind + 1}- You were Prescribed Medicine "{med.medicine}" on{" "}
+                  {med.date_of_prescription} with the following instructions:
+                  <br></br>
+                  &emsp;
+                  {med.prescription_details}.<br></br>
+                  &emsp; This priscription is{" "}
+                  {med.active_prescription === "yes"
+                    ? "still active"
+                    : "no longer active"}
+                </p>
+              );
+            })}
+          </div>
+        )}
+      </>
     </div>
   );
 }
