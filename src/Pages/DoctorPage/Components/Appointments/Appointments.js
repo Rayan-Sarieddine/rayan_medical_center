@@ -9,9 +9,11 @@ function Appointments({ doctor }) {
   const today = new Date();
   const data = { user_id: localStorage.getItem("user_id") };
   const [appointmentsData, setappointmentsData] = useState("s");
+  const [appointmentsMsg, setAppointmentsMsg] = useState("");
 
   const fetchAppointmentsData = async () => {
     try {
+      let data = { user_id: localStorage.getItem("user_id") };
       axios
         .post("https://localhost/rayan_care/allDoctorAppointments.php", data, {
           headers: {
@@ -29,31 +31,67 @@ function Appointments({ doctor }) {
   useEffect(() => {
     fetchAppointmentsData();
   }, []);
-  async function acceptAppointment() {
+  async function acceptAppointment(date, patient_id) {
     try {
-      const response1 = await axios.get(
-        "https://localhost/rayan_care/acceptAppointments.php"
-      );
+      let data = { date: date, patient_id: patient_id };
+      console.log(data);
+      axios
+        .post("https://localhost/rayan_care/acceptAppointment.php", data, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          setAppointmentsMsg(response.data.message);
+          setTimeout(() => {
+            setAppointmentsMsg("");
+          }, 1500);
+        });
     } catch (error) {
-      console.error("Error fetching doctors:", error);
+      console.error("Error getting info:", error);
     }
   }
-  async function rejectAppointment() {
+  async function rejectAppointment(date, patient_id) {
     try {
-      const response1 = await axios.get(
-        "https://localhost/rayan_care/rejectAppointments.php"
-      );
+      let data = { date: date, patient_id: patient_id };
+      console.log(data);
+      axios
+        .post("https://localhost/rayan_care/rejectAppointment.php", data, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          setAppointmentsMsg(response.data.message);
+          setTimeout(() => {
+            setAppointmentsMsg("");
+          }, 1500);
+        });
     } catch (error) {
-      console.error("Error fetching doctors:", error);
+      console.error("Error getting info:", error);
     }
   }
-  async function finishAppointment() {
+  async function finishAppointment(date, patient_id) {
     try {
-      const response1 = await axios.get(
-        "https://localhost/rayan_care/finishAppointments.php"
-      );
+      let data = { date: date, patient_id: patient_id };
+      console.log(data);
+      axios
+        .post("https://localhost/rayan_care/finishAppointment.php", data, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          setAppointmentsMsg(response.data.message);
+          setTimeout(() => {
+            setAppointmentsMsg("");
+          }, 1500);
+        });
     } catch (error) {
-      console.error("Error fetching doctors:", error);
+      console.error("Error getting info:", error);
     }
   }
 
@@ -70,6 +108,7 @@ function Appointments({ doctor }) {
       </div>
       {showAppointmentsBody && (
         <div className="appointments_body">
+          <p className="app-msg">{appointmentsMsg}</p>
           <table>
             <thead>
               <tr>
@@ -89,7 +128,10 @@ function Appointments({ doctor }) {
                     <td className="tb table-btn-accept">
                       <button
                         onClick={() => {
-                          acceptAppointment();
+                          acceptAppointment(
+                            appoint.date_of_appointment,
+                            appoint.patient_id
+                          );
                         }}
                       >
                         Accept
@@ -98,7 +140,10 @@ function Appointments({ doctor }) {
                     <td className="tb table-btn-reject">
                       <button
                         onClick={() => {
-                          rejectAppointment();
+                          rejectAppointment(
+                            appoint.date_of_appointment,
+                            appoint.patient_id
+                          );
                         }}
                       >
                         Reject
@@ -107,7 +152,10 @@ function Appointments({ doctor }) {
                     <td className="tb table-btn-finish">
                       <button
                         onClick={() => {
-                          finishAppointment();
+                          finishAppointment(
+                            appoint.date_of_appointment,
+                            appoint.patient_id
+                          );
                         }}
                       >
                         Finish
