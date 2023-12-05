@@ -34,7 +34,7 @@ function BookAppointments({ patient }) {
           setmsg(response.data.message);
           setTimeout(() => {
             setmsg("");
-          }, 1000);
+          }, 1500);
         });
     } catch (error) {
       console.error("Error getting info:", error);

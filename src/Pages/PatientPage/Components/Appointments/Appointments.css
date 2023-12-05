@@ -35,3 +35,20 @@
 .appointments_header div {
   margin-right: 3rem;
 }
+.appointments_body table {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+.pending {
+  background-color: rgb(140, 135, 135);
+}
+.accepted {
+  background-color: rgb(86, 86, 192);
+}
+.rejected {
+  background-color: rgb(166, 84, 84);
+}
+.finished {
+  background-color: rgb(79, 158, 79);
+}

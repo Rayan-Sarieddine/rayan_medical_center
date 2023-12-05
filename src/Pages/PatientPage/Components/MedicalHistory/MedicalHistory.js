@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./MedicalHistory.css";
 import axios from "axios";
 function MedicalHistory({ patient }) {
-  const data = { user_id: localStorage.getItem("user_id") };
   const [showMedicalHistoryBody, setShowMedicalHistoryBody] = useState(false);
+  const data = { user_id: localStorage.getItem("user_id") };
   const [medicalHistory, setMedicalHistory] = useState(null);
   const toggleMedicalHistoryBody = () => {
     setShowMedicalHistoryBody(!showMedicalHistoryBody);
