@@ -12,12 +12,16 @@ function MedicalHistory({ patient }) {
   const fetchMedicalHistory = async () => {
     try {
       axios
-        .post("https://localhost/rayan_care/medicalHistory.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/medicalHistory.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           if (response.data.condition_data.length > 0) {
             setMedicalHistory(response.data.condition_data);

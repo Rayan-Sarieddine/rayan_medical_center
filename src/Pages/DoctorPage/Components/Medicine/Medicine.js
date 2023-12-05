@@ -20,12 +20,16 @@ function Medicine({ doctor }) {
     console.log(data);
     try {
       axios
-        .post("https://localhost/rayan_care/prescribe.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/prescribe.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setprescribedmsg(response.data.message);
           setTimeout(() => {

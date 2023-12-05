@@ -13,12 +13,16 @@ function Appointments({ patient }) {
   const fetchAppointmentsData = async () => {
     try {
       axios
-        .post("https://localhost/rayan_care/allAppointments.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/allAppointments.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setappointmentsData(response.data.appointments_data);
         });

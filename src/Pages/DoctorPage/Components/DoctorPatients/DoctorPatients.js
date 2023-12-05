@@ -12,12 +12,16 @@ function DoctorPatients({ doctor }) {
   const fetchpatientsData = async () => {
     try {
       axios
-        .post("https://localhost/rayan_care/allDoctorPatients.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/allDoctorPatients.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setPatients(response.data.patients_data);
         });

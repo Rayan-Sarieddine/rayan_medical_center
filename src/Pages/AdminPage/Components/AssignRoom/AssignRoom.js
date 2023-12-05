@@ -34,12 +34,16 @@ function AssignRoom() {
   }
   function sendData(data) {
     axios
-      .post("https://localhost/rayan_care/assignRoom.php", data, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "https://localhost/rayan_medical_center/back_end/assignRoom.php",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         if (response.data.message === "patient Room updated") {
           setUpdatePatientRMsg("Assigned");

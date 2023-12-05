@@ -25,7 +25,7 @@ function AdminPage() {
   const fetchDoctorsData = async () => {
     try {
       const response1 = await axios.get(
-        "https://localhost/rayan_care/allDoctors.php"
+        "https://localhost/rayan_medical_center/back_end/allDoctors.php"
       );
 
       if (response1.data.doctors_data) {
@@ -41,7 +41,7 @@ function AdminPage() {
   const fetchPatientsData = async () => {
     try {
       const response2 = await axios.get(
-        "https://localhost/rayan_care/allPatients.php"
+        "https://localhost/rayan_medical_center/back_end/allPatients.php"
       );
 
       if (response2.data.patients_data) {
@@ -57,7 +57,7 @@ function AdminPage() {
   const fetchRoomssData = async () => {
     try {
       const response3 = await axios.get(
-        "https://localhost/rayan_care/allRooms.php"
+        "https://localhost/rayan_medical_center/back_end/allRooms.php"
       );
 
       if (response3.data.rooms_data) {

@@ -23,12 +23,16 @@ function DoctorPage() {
   const fetchdoctorData = async () => {
     try {
       axios
-        .post("https://localhost/rayan_care/getDoctor.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/getDoctor.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setdoctor(response.data.doctorData);
           console.log(response.data.doctorData);

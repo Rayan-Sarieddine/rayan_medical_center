@@ -39,12 +39,16 @@ function UpdateDoctor() {
   }
   function sendData(data) {
     axios
-      .post("https://localhost/rayan_care/updateDoctor.php", data, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "https://localhost/rayan_medical_center/back_end/updateDoctor.php",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         if (response.data.message === "doctor Updated") {
           setUpdateDoctorMsg("Updated");

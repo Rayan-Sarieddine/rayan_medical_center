@@ -39,12 +39,16 @@ function AddDoctors() {
   }
   function sendData(data) {
     axios
-      .post("https://localhost/rayan_care/addDoctor.php", data, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "https://localhost/rayan_medical_center/back_end/addDoctor.php",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         if (response.data.message === "User added") {
           setDoctorMsg("Added");

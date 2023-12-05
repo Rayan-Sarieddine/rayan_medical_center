@@ -15,12 +15,16 @@ function Appointments({ doctor }) {
     try {
       let data = { user_id: localStorage.getItem("user_id") };
       axios
-        .post("https://localhost/rayan_care/allDoctorAppointments.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/allDoctorAppointments.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setappointmentsData(response.data.appointments_data);
         });
@@ -36,12 +40,16 @@ function Appointments({ doctor }) {
       let data = { date: date, patient_id: patient_id };
       console.log(data);
       axios
-        .post("https://localhost/rayan_care/acceptAppointment.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/acceptAppointment.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setAppointmentsMsg(response.data.message);
           setTimeout(() => {
@@ -57,12 +65,16 @@ function Appointments({ doctor }) {
       let data = { date: date, patient_id: patient_id };
       console.log(data);
       axios
-        .post("https://localhost/rayan_care/rejectAppointment.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/rejectAppointment.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setAppointmentsMsg(response.data.message);
           setTimeout(() => {
@@ -78,12 +90,16 @@ function Appointments({ doctor }) {
       let data = { date: date, patient_id: patient_id };
       console.log(data);
       axios
-        .post("https://localhost/rayan_care/finishAppointment.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/finishAppointment.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setAppointmentsMsg(response.data.message);
           setTimeout(() => {

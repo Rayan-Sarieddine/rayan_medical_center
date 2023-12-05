@@ -12,12 +12,16 @@ function PatientPage() {
   const fetchpatientData = async () => {
     try {
       axios
-        .post("https://localhost/rayan_care/getPatient.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/getPatient.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setPatient(response.data.patientData);
         });

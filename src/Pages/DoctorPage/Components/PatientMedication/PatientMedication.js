@@ -18,12 +18,16 @@ function PatientMedication({ doctor }) {
     console.log(data);
     try {
       axios
-        .post("https://localhost/rayan_care/getAllPrescriptions.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/getAllPrescriptions.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setPatientsMedication(response.data.prescriptions);
         });
@@ -48,12 +52,16 @@ function PatientMedication({ doctor }) {
     console.log(data);
     try {
       axios
-        .post("https://localhost/rayan_care/activatePrescription.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/activatePrescription.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           console.log(response.data);
         });
@@ -70,12 +78,16 @@ function PatientMedication({ doctor }) {
     console.log(data);
     try {
       axios
-        .post("https://localhost/rayan_care/deactivatePrescription.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/deactivatePrescription.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           console.log(response.data);
         });

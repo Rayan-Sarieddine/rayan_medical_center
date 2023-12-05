@@ -25,12 +25,16 @@ function BookAppointments({ patient }) {
     console.log(data);
     try {
       axios
-        .post("https://localhost/rayan_care/bookAppointment.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/bookAppointment.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           setmsg(response.data.message);
           setTimeout(() => {

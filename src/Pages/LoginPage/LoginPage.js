@@ -54,12 +54,16 @@ function LoginPage() {
   function loginSubmit(data) {
     if (email !== "" && password !== "" && selectedRole !== "") {
       axios
-        .post("https://localhost/rayan_care/sign-in.php", data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-        })
+        .post(
+          "https://localhost/rayan_medical_center/back_end/sign-in.php",
+          data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           if (response.data.message === "User found") {
             localStorage.setItem("user_id", response.data.user_id);
